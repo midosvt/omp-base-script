@@ -1,0 +1,2 @@
+# samp base script
+ SAMP

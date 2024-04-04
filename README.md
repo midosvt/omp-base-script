@@ -6,12 +6,21 @@ I'm going to try my best to keep this script newbie-friendly and will comment th
 But you must have at least a basic understanding of how Pawn works.
 
 
-## Features
-- It's based on MySQL.
-- Bcrypt for password hashing.
-- Login and Register with dialogs.
-- Player data is saved to database upon disconnect and is loaded on connect such as skin, score, position etc.
+# MySQL Configuration
+We are using `mysql_connect_file` to connect to our MySQL server and database, using a INI-like file where all connection credentials and options are specified.
+
+Create a `mysql.ini` file in the server root folder.
+NOTE: You CANNOT specify any directories in the file name, the connection file HAS to and MUST be in the open.mp server root folder.
 
 
-## How to start
-1. 
+see [mysql_connect_file](https://github.com/pBlueG/SA-MP-MySQL/wiki#mysql_connect_file) for available fields you can use.
+
+An example of mysql.ini file:
+```ini
+hostname = localhost
+username = root
+password = 123455
+database = mns_database
+```
+
+# Tables

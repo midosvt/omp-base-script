@@ -288,6 +288,9 @@ public OnPlayerVerifyPassword(playerid, bool:success)
 
 public OnPlayerAccountLoad(playerid)
 {
+    // Reset the bad login attempts
+    PlayerData[playerid][pBadLogins] = 0;
+
     // Player is logged in now.
     PlayerData[playerid][pLoggedIn] = true;
 

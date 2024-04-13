@@ -159,16 +159,12 @@ public OnPlayerAccountCheck(playerid)
         // An account exists with that name.
         cache_get_value(0, "Hash", PlayerData[playerid][PasswordHash], BCRYPT_HASH_LENGTH);
 
-        new szString[128];
-        format(szString, sizeof (szString), "This account (%s) is registered. Please enter your password in the field below:", PlayerData[playerid][pName]);
-        ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Log in", szString, "Login", "Cancel");
+        ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Log in", "This account (%s) is registered. Please enter your password in the field below:", "Login", "Cancel", PlayerData[playerid][pName]);
     }
     else
     {
         // That name is not registered. Player needs to register.
-        new szString[128];
-        format(szString, sizeof (szString), "Welcome %s, you can register by entering your password in the field below:", PlayerData[playerid][pName]);
-        ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_PASSWORD, "Registration", szString, "Register", "Cancel");
+        ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_PASSWORD, "Registration", "Welcome %s, you can register by entering your password in the field below:", "Register", "Cancel", PlayerData[playerid][pName]);
     }
 
     return 1;
@@ -268,10 +264,8 @@ public OnPlayerVerifyPassword(playerid, bool:success)
             return 1;
         }
 
-        new szString[165];
         new attemptsleft = MAX_FAIL_LOGINS - PlayerData[playerid][pBadLogins];
-        format(szString, sizeof(szString), "{FF0000}WRONG PASSWORD\n{FF0000}You have %i login attempts left\n\n{FFFFFF}Please enter the password for this account (%s) in the field below.", attemptsleft, PlayerData[playerid][pName]);
-        ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Log in", szString, "Log in", "Close");
+        ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Log in", "{FF0000}WRONG PASSWORD\n{FF0000}You have %i login attempts left\n\n{FFFFFF}Please enter the password for this account (%s) in the field below.", "Log in", "Close", attemptsleft, PlayerData[playerid][pName]);
 
     }
     else

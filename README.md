@@ -23,5 +23,11 @@ password = 123455
 database = mns_database
 ```
 
+# Plugins
+__________________________________________
+|dd
+|
+|
+
 # Tables
 Import the [database structure file](https://github.com/midosvt/omp-base-script/blob/master/database/database_structure.sql)

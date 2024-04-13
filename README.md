@@ -24,10 +24,10 @@ database = mns_database
 ```
 
 # Plugins
-__________________________________________
-|dd
-|
-|
+| Plugin      | Download    |
+| ----------- | ----------- |
+| MySQL       | https://github.com/pBlueG/SA-MP-MySQL/releases/tag/R41-4                |
+| Bcrypt      | https://github.com/Sreyas-Sreelal/samp-bcrypt/releases/tag/0.4.0        |
 
 # Tables
 Import the [database structure file](https://github.com/midosvt/omp-base-script/blob/master/database/database_structure.sql)

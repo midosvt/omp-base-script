@@ -35,7 +35,6 @@ main() {}
 // Forwards
 forward OnPlayerAccountCheck(playerid);
 forward OnPlayerHashPassword(playerid);
-forward RegisterAccountForPlayer(playerid, const hash[]);
 forward OnPlayerVerifyPassword(playerid, bool:success);
 forward OnPlayerAccountLoad(playerid);
 forward OnPlayerFinishRegisteration(playerid);
@@ -225,7 +224,7 @@ public OnPlayerHashPassword(playerid)
     return 1;
 }
 
-public RegisterAccountForPlayer(playerid, const hash[])
+stock RegisterAccountForPlayer(playerid, const hash[])
 {
     new szQuery[256];
     mysql_format(dbHandle, szQuery, sizeof (szQuery), "INSERT INTO `players` (`Name`, `Hash`) VALUES ('%e', '%s')", PlayerData[playerid][pName], hash);
@@ -368,15 +367,15 @@ stock SavePlayerData(playerid)
     // Let's save the player data.
     new szQuery[256];
     mysql_format(dbHandle, szQuery, sizeof (szQuery), "UPDATE `players` SET \
-    `Skin` = '%i',      \
-    `Score` = '%i',     \
-    `Kills` = '%i',     \
-    `Deaths` = '%i',    \
-    `x_pos` = '%f',     \
-    `y_pos` = '%f',     \
-    `z_pos` = '%f',     \
-    `angle_pos` = '%f'  \
-    WHERE `ID` = '%i' LIMIT 1",
+    `Skin` = %i,      \
+    `Score` = %i,     \
+    `Kills` = %i,     \
+    `Deaths` = %i,    \
+    `x_pos` = %f,     \
+    `y_pos` = %f,     \
+    `z_pos` = %f,     \
+    `angle_pos` = %f  \
+    WHERE `ID` = %i",
     PlayerData[playerid][pSkin],
     PlayerData[playerid][pScore],
     PlayerData[playerid][pKills],

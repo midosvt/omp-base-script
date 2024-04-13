@@ -1,7 +1,7 @@
 CREATE TABLE players (
     ID INT PRIMARY KEY,
-    Name VARCHAR(255),
-    Hash VARCHAR(255),
+    Name VARCHAR(24),
+    Hash VARCHAR(60),
     Skin INT,
     Score INT,
     Kills INT,

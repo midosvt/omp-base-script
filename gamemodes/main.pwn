@@ -59,8 +59,8 @@ new MySQL:dbHandle;
 enum E_PLAYER_DATA
 {
     // Account variables
-    pAccountID,     // 
-    pName[MAX_PLAYER_NAME],
+    pAccountID,
+    pName[MAX_PLAYER_NAME + 1],
     PasswordHash[BCRYPT_HASH_LENGTH],
     pBadLogins,
     bool:pLoggedIn,
@@ -126,7 +126,7 @@ public OnGameModeExit()
 public OnPlayerConnect(playerid)
 {
     // Player name
-    GetPlayerName(playerid, PlayerData[playerid][pName], MAX_PLAYER_NAME);
+    GetPlayerName(playerid, PlayerData[playerid][pName]);
 
     // Let's send a query to receive all the stored player data from the 'players' table.
     new szQuery[256];

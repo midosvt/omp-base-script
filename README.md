@@ -9,8 +9,8 @@ But you must have at least a basic understanding of how Pawn works.
 # MySQL Configuration
 We are using `mysql_connect_file` to connect to our MySQL server and database, using a INI-like file where all connection credentials and options are specified.
 
-Create a `mysql.ini` file in the server root folder.
-NOTE: You CANNOT specify any directories in the file name, the connection file HAS to and MUST be in the open.mp server root folder.
+Create a `mysql.ini` file in the server root folder. 
+**NOTE:** You CANNOT specify any directories in the file name, the connection file HAS to and MUST be in the open.mp server root folder.
 
 
 see [mysql_connect_file](https://github.com/pBlueG/SA-MP-MySQL/wiki#mysql_connect_file) for available fields you can use.
@@ -24,3 +24,4 @@ database = mns_database
 ```
 
 # Tables
+Import the [database structure file](https://github.com/midosvt/omp-base-script/blob/master/database/database_structure.sql)

@@ -14,14 +14,12 @@
 
 */
 
+// We are going to define MAX_PLAYERS before including open.mp so we don't have to undef it.
+// Change the value to the "Slots" you want.
+#define MAX_PLAYERS     28
+
 #include <open.mp>
 
-// Change this to the amout of players (Slots) you want.
-#if defined MAX_PLAYERS
-    #undef MAX_PLAYERS
-#endif
-#define MAX_PLAYERS (98)
-        
 
 // MySQL Plugin latest version (R41-4) https://github.com/pBlueG/SA-MP-MySQL/releases/tag/R41-4
 #include <a_mysql>  

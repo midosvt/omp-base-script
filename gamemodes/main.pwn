@@ -338,7 +338,10 @@ public OnPlayerDeath(playerid, killerid, WEAPON:reason)
     PlayerData[playerid][pDeaths] ++;
 
     // Increase kills count.
-    PlayerData[killerid][pKills] ++;
+    if(killerid != INVALID_PLAYER_ID)
+    {
+        PlayerData[killerid][pKills] ++;
+    }
 
     return 1;
 }

@@ -145,6 +145,8 @@ public OnPlayerDisconnect(playerid, reason)
         GetPlayerFacingAngle(playerid, PlayerData[playerid][player_pos_angle]);
     }
 
+    PlayerData[playerid][pBadLogins] = 0;
+
     // Save the player data.
     SavePlayerData(playerid);
 
@@ -224,6 +226,7 @@ public OnPlayerHashPassword(playerid)
     return 1;
 }
 
+// 'stock' keyword is not needed. Unless, you're going to have this in it's own module.
 stock RegisterAccountForPlayer(playerid, const hash[])
 {
     new szQuery[256];

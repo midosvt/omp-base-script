@@ -33,5 +33,5 @@ database = mns_database
 Import the [database structure file](https://github.com/midosvt/omp-base-script/blob/master/database/database_structure.sql)
 
 # Credits
-Mido    - Creation
+Mido    - Creation</br>
 edgyaf  - Advice and inputs

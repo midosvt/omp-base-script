@@ -157,7 +157,7 @@ public OnPlayerAccountCheck(playerid)
     if(cache_num_rows() > 0)
     {
         // An account exists with that name.
-        cache_get_value(0, "Hash", PlayerData[playerid][PasswordHash], BCRYPT_HASH_LENGTH);
+        cache_get_value(0, "Hash", PlayerData[playerid][PasswordHash]);
 
         ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Log in", "This account (%s) is registered. Please enter your password in the field below:", "Login", "Cancel", PlayerData[playerid][pName]);
     }

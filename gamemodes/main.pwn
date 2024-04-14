@@ -133,6 +133,9 @@ public OnPlayerConnect(playerid)
     mysql_format(dbHandle, szQuery, sizeof (szQuery), "SELECT * FROM `players` WHERE `Name` = '%e' LIMIT 1", PlayerData[playerid][pName]);
     mysql_tquery(dbHandle, szQuery, "OnPlayerAccountCheck", "i", playerid);
 
+    // Set login status to false.
+    PlayerData[playerid][pLoggedIn] = false;
+
     return 1;
 }
 
@@ -397,6 +400,7 @@ DelayedKick(playerid, const reason[])
     SetTimerEx("TIMER_DelayedKick", 2000, false, "i", playerid);
 
     return 1;
+}
 
 public TIMER_DelayedKick(playerid)
 {

@@ -197,19 +197,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
         case DIALOG_LOGIN:
         {
-            if(dialogid == DIALOG_REGISTER)
-            {
+            // We kick the players that have clicked the 'Cancel' button.
+            if(!response) return Kick(playerid);
 
-            }
-
-            if(dialogid == DIALOG_LOGIN)
-            {
-                // We kick the players that have clicked the 'Cancel' button.
-                if(!response) return Kick(playerid);
-
-                // We're gonna check and see if the password is correct.
-                bcrypt_verify(playerid, "OnPlayerVerifyPassword", inputtext, PlayerData[playerid][PasswordHash]);
-            }
+            // We're gonna check and see if the password is correct.
+            bcrypt_verify(playerid, "OnPlayerVerifyPassword", inputtext, PlayerData[playerid][PasswordHash]);
         }
     }
 

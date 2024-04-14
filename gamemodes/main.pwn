@@ -342,9 +342,10 @@ public OnPlayerDeath(playerid, killerid, WEAPON:reason)
     // Increase deaths count.
     PlayerData[playerid][pDeaths] ++;
 
-    // Increase kills count.
+    // We check if the killerid is a valid playerid, otherwise OnPlayerDeath will throw array index out of bounds.
     if(killerid != INVALID_PLAYER_ID)
     {
+        // Increase the player's kills
         PlayerData[killerid][pKills] ++;
     }
 

@@ -9,7 +9,7 @@ But you must have at least a basic understanding of how Pawn works.
 # MySQL Configuration
 We are using `mysql_connect_file` to connect to our MySQL server and database, using a INI-like file where all connection credentials and options are specified.
 
-Create a `mysql.ini` file in the server root folder. 
+Create a `mysql.ini` file in the server root folder.</br>
 **NOTE:** You CANNOT specify any directories in the file name, the connection file HAS to and MUST be in the open.mp server root folder.
 
 

@@ -38,6 +38,7 @@ forward OnPlayerHashPassword(playerid);
 forward OnPlayerVerifyPassword(playerid, bool:success);
 forward OnPlayerAccountLoad(playerid);
 forward OnPlayerFinishRegisteration(playerid);
+forward TIMER_DelayedKick(playerid);
 
 // This is going to be our MYSQL connection handle.
 new MySQL:dbHandle;
@@ -265,7 +266,9 @@ public OnPlayerVerifyPassword(playerid, bool:success)
         // Did the player exceed the maximum login attempts?
         if(PlayerData[playerid][pBadLogins] >= MAX_FAIL_LOGINS)
         {
-            SendClientMessage(playerid, 0xFF0000, "You've been kicked out of the server. Reason: Exceed maximum login attempts.");
+            // Yes! Kick them.
+            DelayedKick(playerid, "Exceed maximum login attempts");
+
             return 1;
         }
 
@@ -381,6 +384,23 @@ stock SavePlayerData(playerid)
     PlayerData[playerid][player_pos_angle],
     PlayerData[playerid][pAccountID]);
     mysql_tquery(dbHandle, szQuery);
+
+    return 1;
+}
+
+DelayedKick(playerid, const reason[])
+{
+    SendClientMessage(playerid, 0xFF0000, "You have been kicked out of the server. Reason: %s.", reason);
+
+    TogglePlayerSpectating(playerid, true);
+
+    SetTimerEx("TIMER_DelayedKick", 2000, false, "i", playerid);
+
+    return 1;
+
+public TIMER_DelayedKick(playerid)
+{
+    Kick(playerid);
 
     return 1;
 }

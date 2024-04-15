@@ -37,7 +37,7 @@ forward OnPlayerAccountCheck(playerid);
 forward OnPlayerHashPassword(playerid);
 forward OnPlayerVerifyPassword(playerid, bool:success);
 forward OnPlayerAccountLoad(playerid);
-forward OnPlayerFinishRegisteration(playerid);
+forward OnPlayerFinishRegistration(playerid);
 forward TIMER_DelayedKick(playerid);
 
 // This is going to be our MYSQL connection handle.
@@ -227,12 +227,12 @@ stock RegisterAccountForPlayer(playerid, const hash[])
 {
     new szQuery[256];
     mysql_format(dbHandle, szQuery, sizeof (szQuery), "INSERT INTO `players` (`Name`, `Hash`) VALUES ('%e', '%s')", PlayerData[playerid][pName], hash);
-    mysql_tquery(dbHandle, szQuery, "OnPlayerFinishRegisteration", "i", playerid);
+    mysql_tquery(dbHandle, szQuery, "OnPlayerFinishRegistration", "i", playerid);
 
     return 1;
 }
 
-public OnPlayerFinishRegisteration(playerid)
+public OnPlayerFinishRegistration(playerid)
 {
     // Retrieves the ID generated for an AUTO_INCREMENT column by the sent query
     PlayerData[playerid][pAccountID] = cache_insert_id();

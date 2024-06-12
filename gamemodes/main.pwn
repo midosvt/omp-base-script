@@ -35,6 +35,7 @@ main() {}
 // Forwards
 forward OnPlayerAccountCheck(playerid);
 forward OnPlayerHashPassword(playerid);
+forward RegisterAccountForPlayer(playerid, const hash []);
 forward OnPlayerVerifyPassword(playerid, bool:success);
 forward OnPlayerAccountLoad(playerid);
 forward OnPlayerFinishRegistration(playerid);
@@ -222,8 +223,7 @@ public OnPlayerHashPassword(playerid)
     return 1;
 }
 
-// 'stock' keyword is not needed. Unless, you're going to have this in it's own module.
-stock RegisterAccountForPlayer(playerid, const hash[])
+public RegisterAccountForPlayer(playerid, const hash [])
 {
     new szQuery[256];
     mysql_format(dbHandle, szQuery, sizeof (szQuery), "INSERT INTO `players` (`Name`, `Hash`) VALUES ('%e', '%s')", PlayerData[playerid][pName], hash);

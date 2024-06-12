@@ -35,7 +35,6 @@ main() {}
 // Forwards
 forward OnPlayerAccountCheck(playerid);
 forward OnPlayerHashPassword(playerid);
-forward RegisterAccountForPlayer(playerid, const hash []);
 forward OnPlayerVerifyPassword(playerid, bool:success);
 forward OnPlayerAccountLoad(playerid);
 forward OnPlayerFinishRegistration(playerid);
@@ -218,12 +217,12 @@ public OnPlayerHashPassword(playerid)
     new hash[BCRYPT_HASH_LENGTH];
     bcrypt_get_hash(hash, sizeof (hash));
 
-    CallLocalFunction("RegisterAccountForPlayer", "is", playerid, hash);
+    RegisterAccountForPlayer(playerid, hash);
 
     return 1;
 }
 
-public RegisterAccountForPlayer(playerid, const hash [])
+RegisterAccountForPlayer(playerid, const hash [])
 {
     new szQuery[256];
     mysql_format(dbHandle, szQuery, sizeof (szQuery), "INSERT INTO `players` (`Name`, `Hash`) VALUES ('%e', '%s')", PlayerData[playerid][pName], hash);

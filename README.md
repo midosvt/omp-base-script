@@ -34,4 +34,4 @@ Import the [database structure file](https://github.com/midosvt/omp-base-script/
 
 # Credits
 Mido    - Creation</br>
-edgyaf  - Advice and inputs
+edgyaf  - Bug finding

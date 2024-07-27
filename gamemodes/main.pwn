@@ -128,6 +128,9 @@ public OnPlayerConnect(playerid)
     // Player name
     GetPlayerName(playerid, PlayerData[playerid][pName]);
 
+    // Enable player spectating mode to hide class selection buttons ([<] [>] [Spawn])
+    TogglePlayerSpectating(playerid, true);
+
     // Let's send a query to receive all the stored player data from the 'players' table.
     new szQuery[256];
     mysql_format(dbHandle, szQuery, sizeof (szQuery), "SELECT * FROM `players` WHERE `Name` = '%e' LIMIT 1", PlayerData[playerid][pName]);
@@ -249,6 +252,10 @@ public OnPlayerFinishRegistration(playerid)
     // Default skin
     PlayerData[playerid][pSkin]             = DEFAULT_SKIN;
 
+    // We initially set this to true in OnPlayerConnect to enable spectating mode. 
+    // Now that the player has registered, set it to false so they can control their character.
+    TogglePlayerSpectating(playerid, false);
+
     // Set the player spawn info such as (Skin, pos, etc...)
     SetSpawnInfo(playerid, NO_TEAM, PlayerData[playerid][pSkin], PlayerData[playerid][player_pos_x], PlayerData[playerid][player_pos_y], PlayerData[playerid][player_pos_z], PlayerData[playerid][player_pos_angle], WEAPON_FIST, 0, WEAPON_FIST, 0, WEAPON_FIST, 0);
 
@@ -311,6 +318,10 @@ public OnPlayerAccountLoad(playerid)
     cache_get_value_name_float(0, "angle_pos", PlayerData[playerid][player_pos_angle]);
 
     ShowPlayerDialog(playerid, DIALOG_UNUSED, DIALOG_STYLE_MSGBOX, "Login", "You have been successfully logged in.", "Close", "");
+
+    // We initially set this to true in OnPlayerConnect to enable spectating mode. 
+    // Now that the player has logged in, set it to false so they can control their character.
+    TogglePlayerSpectating(playerid, false);
 
     // Player score
     SetPlayerScore(playerid, PlayerData[playerid][pScore]);

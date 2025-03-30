@@ -58,10 +58,10 @@ The file structure for this is as follows:
 └── main.pwn                   # Main file
 ```
 
-# Contributing
-Anyone is free to contribute in any way, whether it's by giving advice, opening a PR, or just suggestions. And to be honest there might be some mistakes because I wrote half of it while I'm half asleep.
+# Contributing 
+Everyone is welcome to contribute - whether through advice, pull requests, or suggestions. Honestly, there might be some mistakes since I wrote half of this while barely awake.  
 
-If anyone has any insights or found any issues, please open an issue or discuss in https://discord.gg/samp
+If you spot any issues or have improvements to suggest open an issue or discuss it in https://discord.gg/samp
 
 # Thanks
 - SA-MP and open.mp teams (past, present, and future).

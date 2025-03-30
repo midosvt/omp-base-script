@@ -13,15 +13,17 @@ Here's everything you need to get this gamemode up and running.
 You'll need to grab these files first:
 
 - **[open.mp server (latest version)](https://github.com/openmultiplayer/open.mp/releases/latest)**
+- **[YSI (latest version)](https://github.com/pawn-lang/YSI-Includes/releases/latest)**
 - **[MySQL plugin (R41-4)](https://github.com/pBlueG/SA-MP-MySQL/releases/tag/R41-4)**  
 - **[Bcrypt plugin (0.4.1)](https://github.com/Sreyas-Sreelal/samp-bcrypt/releases/tag/0.4.1)**  
 
 ## Setup  
 1. **open.mp server** → Extract this into your server's *root folder* (main directory).  
-2. **MySQL & Bcrypt plugins**:  
+2. **YSI library** → Extract this into`qawno/include/`.
+3. **MySQL & Bcrypt plugins**:  
    - `.dll`/`.so` files → Place in `plugins/`  
    - Include files (`.inc`) → Place in `qawno/include/`  
-3. **MySQL dependencies** (`libmariadb.dll`, `log-core.dll`, etc.) → Drop these directly in your *root folder*.  
+4. **MySQL dependencies** (`libmariadb.dll`, `log-core.dll`, etc.) → Drop these directly in your *root folder*.  
 
 ## Database
 This gamemode uses [`mysql_connect_file`](https://github.com/pBlueG/SA-MP-MySQL/wiki#mysql_connect_file) to establish the database connection through an INI-style configuration file containing all necessary credentials and settings.
@@ -53,6 +55,17 @@ The file structure for this is as follows:
 │   │   │   └── core.pwn       # Main logic (login/register)
 │   └── 
 │
-└── main.pwn                   # Main file```
+└── main.pwn                   # Main file
+```
 
-## Style
+# Contributing
+Anyone is free to contribute in any way, whether it's by giving advice, opening a PR, or just suggestions. And to be honest there might be some mistakes because I wrote half of it while I'm half asleep.
+
+If anyone has any insights or found any issues, please open an issue or discuss in https://discord.gg/samp
+
+# Thanks
+- SA-MP and open.mp teams (past, present, and future).
+- Myself (Mido) for developing this gamemode.
+- BlueG for the MySQL plugin.
+- Sys for the bcrypt plugin.
+- Y_Less for the YSI library.

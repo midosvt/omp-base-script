@@ -17,9 +17,6 @@ new
     // The player's account database ID
     gPlayerAccountID[MAX_PLAYERS],
 
-    // Contains the player's hashed password
-    gPlayerPasswordHash[MAX_PLAYERS][BCRYPT_HASH_LENGTH],
-
     // Tracks failed login attempts per player
     gPlayerLoginAttempts[MAX_PLAYERS],
 

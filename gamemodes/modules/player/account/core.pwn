@@ -66,8 +66,12 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
             if (!response)
                 return Kick(playerid);
 
+            new hash[BCRYPT_HASH_LENGTH];
+            GetPVarString(playerid, "tempPasswordHash", hash, sizeof hash);
+            DeletePVar(playerid, "tempPasswordHash");
+
             // Check if the password is correct.
-            bcrypt_verify(playerid, "OnPlayerCheckPassword", inputtext, gPlayerPasswordHash[playerid]);
+            bcrypt_verify(playerid, "OnPlayerCheckPassword", inputtext, hash);
         }
     }
 
@@ -83,7 +87,11 @@ public OnPlayerRequestLogin(playerid)
     if (cache_num_rows())
     {
         // Retrieve the player's password hash so we can compare it later.
-        cache_get_value_name(0, "player_password_hash", gPlayerPasswordHash[playerid]);
+        new hash[BCRYPT_HASH_LENGTH];
+        cache_get_value_name(0, "player_password_hash", hash);
+
+        // A PVar specifically because of the temporary nature. 
+        SetPVarString(playerid, "tempPasswordHash", hash);
 
         // Show the login dialog since they're registered.
         ShowPlayerLoginDialog(playerid);
@@ -185,7 +193,7 @@ public OnPlayerLogin(playerid)
     gPlayerLoginAttempts[playerid] = 0;
 
     // Not needed anymore.
-    gPlayerPasswordHash[playerid][0] = (EOS);
+    DeletePVar(playerid, "tempPasswordHash");
 
     // Notify the player.
     SendClientMessage(playerid, COLOR_GREEN, "You've successfully logged in. Welcome back!");

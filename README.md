@@ -1,10 +1,10 @@
 # Introduction
-Hi.  Lots of people want to create their first SA-MP/open.mp gamemode but don't know where to begin - I was exactly the same. When I first started with SA-MP, I really wished I had a solid base gamemode to analyze, tweak, and learn Pawn from.
+Many players want to create their first SA-MP/open.mp gamemode but struggle to find a good starting point - I was exactly the same. When I first began with SA-MP, I desperately wanted a proper base gamemode to study, tweak, and learn Pawn through practical examples.
 
-After searching around, I couldn't find many good options (at least from what I saw).  So... I decided to make one myself.
+After extensive searching, I couldn't find any quality beginner-friendly bases (at least none that met my standards). So I decided to build my own.
 
 # The Goal
-My main focus with this project is keeping things *simple* and beginner-friendly. The whole point is to help newcomers understand and modify the code easily. For example, someone might look at basic MySQL callbacks and think "*Why not use inline_mysql?*" - but that would defeat the purpose of making it accessible, wouldn't it?
+My top priority was keeping this gamemode simple and accessible for newcomers. Every design decision was made with beginners in mind.
 
 # Installation
 Here's everything you need to get this gamemode up and running.  

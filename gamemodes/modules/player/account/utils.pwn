@@ -31,15 +31,6 @@ GetPlayerAccountID(playerid)
     return IsPlayerLoggedIn(playerid) ? gPlayerAccountID[playerid] : INVALID_ACCOUNT_ID;
 }
 
-// Return a player's name
-ReturnPlayerName(playerid)
-{
-    new playerName[MAX_PLAYER_NAME];
-    GetPlayerName(playerid, playerName, MAX_PLAYER_NAME - 1);
-    
-    return playerName;
-}
-
 // Show the registration dialog to a player
 ShowPlayerRegistrationDialog(playerid)
 {

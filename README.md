@@ -33,7 +33,7 @@ https://github.com/midosvt/omp-base-script/blob/master/db_credentials.ini
 
 Refer to the MySQL plugin documentation (linked above) for all available configuration fields and options.
 
-Download the database structure from here:
+Download the database structure from here:   
 https://github.com/midosvt/omp-base-script/blob/master/database_structure.ini
 
 ## Modules

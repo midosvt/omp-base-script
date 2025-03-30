@@ -50,7 +50,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
             if (strlen(inputtext) < MIN_PASSWORD_LENGTH || strlen(inputtext) > MAX_PASSWORD_LENGTH)
             {
                 // Tell them the requirements.
-                SendClientMessage(playerid, COLOR_RED, "Password must be %i-%i characters.", MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH);
+                SendClientMessage(playerid, COLOR_RED, "Password must be between %i and %i characters.", MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH);
                 
                 // Let them try again.
                 return ShowPlayerRegistrationDialog(playerid);
@@ -113,8 +113,8 @@ public OnPlayerPasswordHash(playerid)
     mysql_format(gDatabaseHandle, registerQuery, sizeof registerQuery,
         "INSERT INTO `accounts` \
         (`player_name`, `player_password_hash`, `player_ip`, `player_gpci`) \
-        VALUES ('%e', '%e', '%e', '%e')",
-        ReturnPlayerName(playerid), gPlayerPasswordHash[playerid], playerIP, playerGPCI
+        VALUES ('%e', '%s', '%e', '%e')",
+        ReturnPlayerName(playerid), hash, playerIP, playerGPCI
     );
     mysql_tquery(gDatabaseHandle, registerQuery, "OnPlayerRegister", "i", playerid);
 
@@ -130,7 +130,7 @@ public OnPlayerRegister(playerid)
     SetPlayerLoggedIn(playerid, true);
 
     // Notify the player.
-    SendClientMessage(playerid, COLOR_RED, "You've successfully registerd an account.");
+    SendClientMessage(playerid, COLOR_GREEN, "You've successfully registerd an account.");
 
     return 1;
 }
@@ -188,7 +188,7 @@ public OnPlayerLogin(playerid)
     gPlayerPasswordHash[playerid][0] = (EOS);
 
     // Notify the player.
-    SendClientMessage(playerid, COLOR_RED, "You've successfully logged in. Welcome back!");
+    SendClientMessage(playerid, COLOR_GREEN, "You've successfully logged in. Welcome back!");
 
     // Update the IP and GPCI
     new playerIP[16], playerGPCI[41];

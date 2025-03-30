@@ -2,6 +2,9 @@
 // Definitions
 // -----------------------------------------------------------------------------
 
+// Invalid database account ID
+#define INVALID_ACCOUNT_ID  (0)
+
 // Password length requirements (6-60 characters)
 #define MIN_PASSWORD_LENGTH (6) 
 #define MAX_PASSWORD_LENGTH (60)

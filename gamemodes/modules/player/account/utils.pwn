@@ -12,7 +12,7 @@ SetPlayerLoggedIn(playerid, bool:set)
 }
 
 // Returns 1 if the player is logged in, otherwise false
-stock bool:IsPlayerLoggedIn(playerid)
+bool:IsPlayerLoggedIn(playerid)
 {
     // IsPlayerConnected check here is necessary to prevent out
     // of bounds in case INVALID_PLAYER_ID is passed into this function
@@ -28,7 +28,7 @@ GetPlayerAccountID(playerid)
         return false;
     }
 
-    return gPlayerAccountID[playerid];
+    return IsPlayerLoggedIn(playerid) ? gPlayerAccountID[playerid] : INVALID_ACCOUNT_ID;
 }
 
 // Return a player's name

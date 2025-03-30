@@ -19,6 +19,7 @@ forward public OnPlayerLogin(playerid);
 hook OnPlayerConnect(playerid)
 {
     // Initializing player data on connection is important.
+    gPlayerAccountID[playerid] = INVALID_ACCOUNT_ID;
     gPlayerLoginAttempts[playerid] = 0;
     SetPlayerLoggedIn(playerid, false);
 

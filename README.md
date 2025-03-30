@@ -41,7 +41,8 @@ This gamemode uses a modular structure to keep the code organized and manageable
 
 The file structure for this is as follows:
 
-```gamemodes/
+```
+gamemodes/
 │
 ├── /modules/
 │   ├── /defines/              # Definitions & Utilities

@@ -59,6 +59,8 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
             // Password checks out - hash it.
             bcrypt_hash(playerid, "OnPlayerPasswordHash", inputtext, BCRYPT_COST);
+
+            return 1;
         }
 
         case DIALOG_LOGIN:
@@ -73,10 +75,13 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
             // Check if the password is correct.
             bcrypt_verify(playerid, "OnPlayerCheckPassword", inputtext, hash);
+
+            return 1;
         }
     }
 
-    return 1;
+    // Return 0 for unhandled dialogs.
+    return 0;
 }
 
 // -----------------------------------------------------------------------------

@@ -33,6 +33,9 @@ https://github.com/midosvt/omp-base-script/blob/master/db_credentials.ini
 
 Refer to the MySQL plugin documentation (linked above) for all available configuration fields and options.
 
+Download the database structure from here:
+https://github.com/midosvt/omp-base-script/blob/master/database_structure.ini
+
 ## Modules
 This gamemode uses a modular structure to keep the code organized and manageable. If you're unfamiliar with modular programming, read [this tutorial](https://sampforum.blast.hk/showthread.php?tid=597338&highlight=Modular+programming) before making changes. Stick to this approach—it makes maintenance and editing far easier.
 

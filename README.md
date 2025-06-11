@@ -19,17 +19,17 @@ Download the following files before proceeding:
 ## Setup Instructions
 
 1. **open.mp server**
-    \- Extract the open.mp server files into the **root folder** of your server.
+- Extract the open.mp server files into the **root folder** of your server.
 
 2. **YSI Library**
-    \- Extract the contents of the archive into `qawno/include/`.
+- Extract the contents of the archive into `qawno/include/`.
 
 3. **MySQL and BCrypt Plugins**
-    \- Place the plugin files (`.dll` for Windows or `.so` for Linux) inside the `plugins/` directory.
-    \- Move the corresponding `.inc` include files to `qawno/include/`.
+- Place the plugin files (`.dll` for Windows or `.so` for Linux) inside the `plugins/` directory.
+- Move the corresponding `.inc` include files to `qawno/include/`.
 
 4. **MySQL Dependencies**
-    \- Files like `libmariadb.dll`, `log-core.dll`, or any additional libraries should be placed directly in the server's **root folder**.
+- Files like `libmariadb.dll`, `log-core.dll`, or any additional libraries should be placed directly in the server's **root folder**.
 
 > [!NOTE]
 > Ensure that all plugin names are correctly listed in your `config.json` file under the `plugins` setting.

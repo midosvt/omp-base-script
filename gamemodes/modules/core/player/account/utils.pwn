@@ -4,7 +4,6 @@
 
 // Password length limits for account creation.
 #define ACCOUNT_MIN_PASSWORD_LENGTH (6)
-#define ACCOUNT_MAX_PASSWORD_LENGTH (60)
 
 // Invalid database account ID.
 #define INVALID_ACCOUNT_ID          (0)
@@ -45,10 +44,10 @@ Account_ShowRegistrationDialog(playerid, bool:badpass = false)
         DIALOG_STYLE_PASSWORD,
         "Registration",
         "Create a password for your new account.\n\n\
-        The password must be between %d and %d characters long:",
+        The password must be longer than %d characters:",
         "Register",
         "Quit",
-        ACCOUNT_MIN_PASSWORD_LENGTH, ACCOUNT_MAX_PASSWORD_LENGTH
+        ACCOUNT_MIN_PASSWORD_LENGTH
     );
 
     // If `badpass` is true, it means the player's password didn't meet the length
@@ -83,7 +82,7 @@ Account_ShowLoginDialog(playerid)
 bool:IsValidPassword(const password[])
 {
     // Check if password length is within allowed limits.
-    if (!(ACCOUNT_MIN_PASSWORD_LENGTH <= strlen(password) && strlen(password) <= ACCOUNT_MAX_PASSWORD_LENGTH))
+    if (strlen(password) < ACCOUNT_MIN_PASSWORD_LENGTH)
     {
         // Password length invalid.
         return false;

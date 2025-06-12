@@ -54,7 +54,7 @@ Account_ShowRegistrationDialog(playerid, bool:badpass = false)
     // requirements, so we show a warning explaining what went wrong.
     if (badpass)
     {
-        SendClientMessage(playerid, COLOR_RED, "Sorry, something went wrong. The password you chose is probably too short or too weak.");
+        SendClientMessage(playerid, COLOR_RED, "Sorry, something went wrong. The password you chose is too short.");
         SendClientMessage(playerid, COLOR_RED, "Please choose a stronger password and try again.");
     }
 

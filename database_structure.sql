@@ -44,8 +44,7 @@ CREATE TABLE `player_accounts` (
 --
 ALTER TABLE `player_accounts`
   ADD PRIMARY KEY (`account_id`),
-  ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `unique_username` (`username`);
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables

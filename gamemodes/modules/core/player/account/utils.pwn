@@ -22,6 +22,10 @@ static
 // This function is used to determine if the player should register or log in.
 Account_Check(playerid)
 {
+    // Initialize the variables here.
+    s_PlayerAccountID[playerid] = INVALID_ACCOUNT_ID;
+    SetPlayerLoggedIn(playerid, false);    
+
     new 
         query[128];
     

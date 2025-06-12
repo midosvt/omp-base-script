@@ -19,7 +19,6 @@ forward public OnPasswordCheck(playerid, bool:match);
 // Called when a player sucessfully logs in.
 forward public OnPlayerLogin(playerid);
 
-
 // Maximum allowed login attempts before a player is kicked.
 #define MAX_LOGIN_ATTEMPTS (3)
 
@@ -132,7 +131,7 @@ hook OnPasswordHash(playerid)
 hook OnPlayerRegister(playerid)
 {
     // Cache the last inserted ID from the database for this player (account ID).
-    new accountID = cache_insert_id();
+    new const accountID = cache_insert_id();
     SetPlayerAccountID(playerid, accountID);
 
     // Mark the player as logged in.
@@ -157,7 +156,7 @@ hook OnPasswordCheck(playerid, bool:match)
         s_PlayerLoginAttempts[playerid] = 0;
 
         // You can load the player's data here, etc.
-        // ...
+        CallLocalFunction("OnPlayerLogin", "d", playerid);
     }
 
     // Password is not correct.
@@ -181,6 +180,14 @@ hook OnPasswordCheck(playerid, bool:match)
             SendClientMessage(playerid, COLOR_RED, "Wrong password. You still have %d %s left.", attemptsLeft, attemptsLeft == 1 ? "attempt" : "attempts");
         }
     }
+
+    return 1;
+}
+
+// Called when a player sucessfully logs in.
+hook OnPlayerLogin(playerid)
+{
+    // You can load the player's data here, etc.
 
     return 1;
 }

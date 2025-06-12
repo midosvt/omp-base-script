@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `player_accounts` (
   `account_id` int(10) UNSIGNED NOT NULL,
   `username` varchar(24) NOT NULL,
-  `password_hash` CHAR(61) BINARY NOT NULL,
+  `password_hash` CHAR(60) BINARY NOT NULL,
   `register_date` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

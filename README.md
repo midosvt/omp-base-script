@@ -61,9 +61,9 @@ If you notice any bugs, issues, or have ideas to make things better, feel free t
 
 # Special Thanks to
 - SA:MP and open.mp teams (past, present, and future).
-- Myself for developing this gamemode.
+- Mido for developing this gamemode.
 - BlueG and maddinat0r for the MySQL plugin.
-- Sys for the bcrypt plugin.
+- Sys for the BCrypt plugin.
 - Y_Less for the YSI library.
 - Kevin for his highly constructive suggestions and insights.
 - itsneufox for testing this script.

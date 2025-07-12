@@ -29,7 +29,7 @@ Download the following files before proceeding:
 - Move the corresponding `.inc` include files to `qawno/include/`.
 
 **4. MySQL Dependencies**
-- Files like `libmariadb.dll`, `log-core.dll`, or any additional libraries should be placed directly in the server's **root folder**.
+- Files like `libmariadb.dll`, `log-core.dll` (`log-core.so` for Linux), or any additional libraries should be placed directly in the server's **root folder**.
 
 > [!NOTE]
 > Ensure that all plugin names are correctly listed in your `config.json` file under the `plugins` setting.

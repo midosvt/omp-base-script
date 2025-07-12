@@ -2,7 +2,7 @@
 
 This is a simple yet practical base script designed for anyone looking to develop gamemodes for [open.mp](https://open.mp/) or SA:MP.  Whether you're a beginner starting from scratch or a returning developer familiar with the platform, this script offers a clean foundation to build on.
 
-It uses [MySQL](https://github.com/pBlueG/SA-MP-MySQL) for handling data and [BCrypt](https://github.com/Sreyas-Sreelal/samp-bcrypt) for secure password hashing.  While the script itself is straightforward, it does assume you have at least a basic understanding of Pawn scripting and SQL.  If you're willing to learn and explore how each part works, this base will be a solid starting point for your own projects.
+It uses [MySQL](https://github.com/pBlueG/SA-MP-MySQL) for handling data and [BCrypt](https://github.com/Sreyas-Sreelal/samp-bcrypt) for secure password hashing.  While the script itself is straightforward, it does assume you have at least a basic understanding of Pawn scripting and MySQL/SQL.  If you're willing to learn and explore how each part works, this base will be a solid starting point for your own projects.
 
 # Installation
 
@@ -32,7 +32,7 @@ Download the following files before proceeding:
 - Files like `libmariadb.dll`, `log-core.dll` (`log-core.so` for Linux), or any additional libraries should be placed directly in the server's **root folder**.
 
 > [!NOTE]
-> Ensure that all plugin names are correctly listed in your `config.json` file under the `plugins` setting.
+> Ensure that all plugin names are correctly listed in your `config.json` file under the `legacy_plugins` setting.
 
 ## Database
 
